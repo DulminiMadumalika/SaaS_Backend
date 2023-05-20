@@ -5,7 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @CrossOrigin
 @RestController
@@ -13,11 +15,14 @@ public class ReviewController {
     @Autowired
     private ReviewService reviewService;
 
-    @PostMapping("/addReview")
-    public ResponseEntity<String> addReview(@RequestBody Review review) {
+    @PostMapping(value = "/addReview", produces = "application/json")
+    public ResponseEntity<Map<String, Object>> addReview(@RequestBody Review review) {
         String response = reviewService.addReview(review);
-        return ResponseEntity.ok(response);
+        Map<String, Object> responseBody = new HashMap<>();
+        responseBody.put("message", "Added review with id: " + response);
+        return ResponseEntity.ok(responseBody);
     }
+
 
     @GetMapping("/getAllReviews")
     public List<Review> getAllReviews() {
