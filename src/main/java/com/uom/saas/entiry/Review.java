@@ -10,12 +10,16 @@ public class Review {
     String review;
     String reviewerName;
     String rating;
+    String location;
+    String hospital;
 
-    public Review(int id, String review, String reviewerName, String rating) {
+    public Review(int id, String review, String reviewerName, String rating, String location, String hospital) {
         this.id = id;
         this.review = review;
         this.reviewerName = reviewerName;
         this.rating = rating;
+        this.location = location;
+        this.hospital = hospital;
     }
     public int getId() {
         return id;
@@ -47,5 +51,21 @@ public class Review {
 
     public void setRating(String rating) {
         this.rating = rating;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public void setHospital(String hospital) {
+        this.hospital = hospital;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public String getHospital() {
+        return hospital;
     }
 }

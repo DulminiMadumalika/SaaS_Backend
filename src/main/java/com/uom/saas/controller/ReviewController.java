@@ -2,6 +2,7 @@ package com.uom.saas.controller;
 import com.uom.saas.entiry.Review;
 import com.uom.saas.service.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,9 +14,9 @@ public class ReviewController {
     private ReviewService reviewService;
 
     @PostMapping("/addReview")
-    public String addReview(@RequestBody Review review) {
+    public ResponseEntity<String> addReview(@RequestBody Review review) {
         String response = reviewService.addReview(review);
-        return response;
+        return ResponseEntity.ok(response);
     }
 
     @GetMapping("/getAllReviews")
