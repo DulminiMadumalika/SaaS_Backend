@@ -1,19 +1,20 @@
 package com.uom.saas.entiry;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document("reviews")
 public class Review {
     @Id
-    private int id;
+    private ObjectId id;
     String review;
     String reviewerName;
     String rating;
     String location;
     String hospital;
 
-    public Review(int id, String review, String reviewerName, String rating, String location, String hospital) {
+    public Review(ObjectId id, String review, String reviewerName, String rating, String location, String hospital) {
         this.id = id;
         this.review = review;
         this.reviewerName = reviewerName;
@@ -21,7 +22,7 @@ public class Review {
         this.location = location;
         this.hospital = hospital;
     }
-    public int getId() {
+    public ObjectId getId() {
         return id;
     }
 
@@ -37,7 +38,7 @@ public class Review {
         return rating;
     }
 
-    public void setId(int id) {
+    public void setId(ObjectId id) {
         this.id = id;
     }
 

@@ -1,5 +1,6 @@
 package com.uom.saas.entiry;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -7,17 +8,17 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class FirstAid {
 
     @Id
-    private int id;
+    private ObjectId id;
     private String emergency;
     private String firstAid;
 
-    public FirstAid(int id, String emergency, String firstAid) {
+    public FirstAid(ObjectId id, String emergency, String firstAid) {
         this.id = id;
         this.emergency = emergency;
         this.firstAid = firstAid;
     }
 
-    public void setId(int id) {
+    public void setId(ObjectId id) {
         this.id = id;
     }
 
@@ -29,7 +30,7 @@ public class FirstAid {
         this.firstAid = firstAid;
     }
 
-    public int getId() {
+    public ObjectId getId() {
         return id;
     }
 

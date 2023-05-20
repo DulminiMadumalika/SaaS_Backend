@@ -1,5 +1,6 @@
 package com.uom.saas.entiry;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -7,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Provider {
 	
 	@Id
-	private int id;
+	private ObjectId id;
 	private String hospital;
 	private String address;
 	private String contact;
@@ -18,7 +19,7 @@ public class Provider {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Provider(int id, String hospital, String address, String contact, String other) {
+	public Provider(ObjectId id, String hospital, String address, String contact, String other) {
 		super();
 		this.id = id;
 		this.hospital = hospital;
@@ -27,11 +28,11 @@ public class Provider {
 		this.other = other;
 	}
 
-	public int getId() {
+	public ObjectId getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(ObjectId id) {
 		this.id = id;
 	}
 
